@@ -83,7 +83,8 @@ namespace JonoBot {
         /// </summary>
         public async Task FuckMaguire(SocketMessage Message) {
             // Make sure the user is Slabhead/Maguire#1343
-            if (Message.Author.Id != 391355602674384896) {
+            if (Message.Author.Id != 391355602674384896 
+                || Message.Author.Id != 247466419678216192) {
                 return;
             }
 
@@ -98,7 +99,7 @@ namespace JonoBot {
                 User.Channel = null;
             });
 
-            // Skip the song if a song was added.
+            // Remove the song if a song was added.
             if (Message.Content.StartsWith("-play")) {
                 await Message.Channel.SendMessageAsync(StringUtil.ReplaceFirst(Message.Content, "play", "remove"));
             }
